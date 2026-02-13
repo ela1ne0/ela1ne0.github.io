@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HackDuke 2026 Visual Identity – Elaine Yu</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a href="../index.html" class="logo">Elaine Yu</a>
+      <nav class="nav">
+        <a href="../index.html#work">Work</a>
+        <a href="../art.html">Art</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="project-page">
+        <header class="project-page-header">
+          <p class="kicker">Selected Work</p>
+          <p class="project-page-meta">2026 · Brand · Web · Illustration</p>
+          <h1>HackDuke 2026 Visual Identity</h1>
+          <p class="project-page-lead">
+            Served as a designer on HackDuke’s 7-member design team, developing the visual identity and
+            brand ecosystem for the 2026 hackathon, from the official landing page to illustrations and
+            environmental art.
+          </p>
+          <a class="project-link" href="https://2026.hackduke.org/" target="_blank" rel="noopener noreferrer">
+            View website →
+          </a>
+        </header>
+
+        <div class="project-page-body">
+          <!-- Add more sections, images, or case study content here -->
+          <p class="project-placeholder">
+            More details, process, and visuals can be added here.
+          </p>
+        </div>
+
+        <footer class="project-page-footer">
+          <a href="../index.html#work" class="project-back">← Back to Selected Work</a>
+        </footer>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Elaine Yu</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
