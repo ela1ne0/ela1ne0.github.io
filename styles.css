@@ -167,17 +167,21 @@ main {
   width: auto;
   max-width: 140px;
   height: auto;
-  margin-right: 120px;
+  margin-right: 70px;
   opacity: 0.85;
   object-fit: contain;
   filter: drop-shadow(0 6px 16px rgba(0,0,0,0.1));
 }
 
 .hero-dragon {
-    max-width: 180px;
-    max-height: 300px;
+    max-width: 170px;
+    max-height: 170px;
 }
-/* dragon animation*/
+
+/*.hero-dragon {
+  transform: translateY(-20px);
+}*/
+/* dragon hover animation*/
 .hero-dragon {
   transition: transform 0.35s ease;
   transform-origin: center;
@@ -190,7 +194,7 @@ main {
 .hero-clouds {
   position: absolute;
   right: 0;
-  bottom: -90px;
+  bottom: -150px;
   z-index: 1;
   pointer-events: none;
 }
@@ -199,14 +203,14 @@ main {
   display: block;
   width: auto;
   max-width: 300px;
-  max-height: 300px;
+  max-height: 350px;
   object-fit: contain;
 }
 
 /*same thing above but for the small clouds*/
 .hero-smallclouds {
   position: absolute;
-  right: 200px;
+  right: 210px;
   bottom: -30px;
   z-index: 1;
   /*pointer-events: none;*/
@@ -227,6 +231,24 @@ main {
 .hero-smallclouds {
   transition: transform 0.5s ease;
 }
+
+/*Yueshan pagoda*/
+.hero-yueshan {
+  position: absolute;
+  right: 80px;
+  bottom: -170px;
+  z-index: 1;
+  /*pointer-events: none;*/
+}
+.hero-yueshan-img {
+  display: block;
+  width: auto;
+  max-width: 200px;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+
 /* Figma visuals: row of images under the hero subtitle */
 .hero-visuals {
   display: flex;
