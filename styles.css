@@ -178,10 +178,8 @@ main {
     max-height: 170px;
 }
 
-/*.hero-dragon {
-  transform: translateY(-20px);
-}*/
-/* dragon hover animation*/
+
+/* dragon rotation animation -- on hover*/
 .hero-dragon {
   transition: transform 0.35s ease;
   transform-origin: center;
@@ -190,7 +188,16 @@ main {
 .hero-dragon:hover {
   transform: rotate(-10deg) translateY(-4px);
 }
+/*idle floating animation*/
+@keyframes floatDragon {
+  0%   { transform: translateY(-18px); }
+  50%  { transform: translateY(-26px); }
+  100% { transform: translateY(-18px); }
+}
 
+.hero-dragon {
+  animation: floatDragon 4s ease-in-out infinite;
+}
 .hero-clouds {
   position: absolute;
   right: 0;
