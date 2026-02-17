@@ -805,7 +805,113 @@ body{
   .facts{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* ===== Case study layout helpers ===== */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
 
+/* Hero image */
+.case-hero {
+  margin: 0 0 2.5rem;
+}
+.case-hero img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+}
+
+/* Links row */
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Grid: main + aside */
+.case-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  align-items: start;
+}
+.case-main { min-width: 0; }
+
+.case-aside {
+  position: sticky;
+  top: 1.25rem;
+}
+.aside-card {
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 1.1rem 1.1rem 0.9rem;
+  background: rgba(255,255,255,0.85);
+  margin-bottom: 1rem;
+}
+.aside-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+.aside-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+/* Split section (text + image) */
+.case-split {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 1.25rem;
+}
+
+/* Image blocks */
+.case-image {
+  margin: 0;
+}
+.case-image img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  border: 1px solid var(--border-subtle);
+}
+.case-image figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.case-image--full {
+  margin: 2.75rem 0;
+}
+.case-image--full img {
+  border-radius: 20px;
+}
+
+/* Gallery grid */
+.case-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .case-grid { grid-template-columns: 1fr; }
+  .case-aside { position: static; }
+  .case-split { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .case-gallery { grid-template-columns: 1fr; }
+}
 
 }
 
