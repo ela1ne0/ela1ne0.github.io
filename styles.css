@@ -815,16 +815,20 @@ body{
 }
 
 /* Hero image */
+
 .case-hero {
-  margin: 0 0 2.5rem;
-}
-.case-hero img {
-  width: 100%;
-  display: block;
-  border-radius: 20px;
-  border: 1px solid var(--border-subtle);
+  width: 620px;        /* ideal width for 16:9 */
+  max-width: 90%;      /* responsive fallback */
+  margin: 0 auto 2rem;
 }
 
+.case-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+}
 /* Links row */
 .project-links {
   display: flex;
@@ -876,9 +880,14 @@ body{
 .case-image {
   margin: 0;
 }
+.case-image {
+  display: flex;
+  justify-content: flex-end; /* keeps it aligned right */
+}
+
 .case-image img {
-  width: 100%;
-  display: block;
+  width: 85%;              /* shrink image */
+  max-width: 420px;        /* hard cap so it never gets huge */
   border-radius: 18px;
   border: 1px solid var(--border-subtle);
 }
