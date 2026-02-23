@@ -17,7 +17,7 @@
 main,
 .site-header,
 .site-footer {
-  max-width: 1120px;  /* try 1120–1240 */
+  max-width: 1240px;  /* try 1120–1240 */
 }
 
 body {
@@ -192,7 +192,7 @@ main {
 /*idle floating animation*/
 @keyframes floatDragon {
   0%   { transform: translateY(-30px); }
-  50%  { transform: translateY(-25px); }
+  50%  { transform: translateY(-15px); }
   100% { transform: translateY(-30px); }
 }
 .hero-dragon {
@@ -886,8 +886,8 @@ body{
 }
 
 .case-image img {
-  width: 85%;              /* shrink image */
-  max-width: 420px;        /* hard cap so it never gets huge */
+  width: 50%;              /* Changed from 70% */
+  max-width: 80px;         /* Changed from 100px */
   border-radius: 18px;
   border: 1px solid var(--border-subtle);
 }
@@ -902,6 +902,11 @@ body{
 }
 .case-image--full img {
   border-radius: 20px;
+}
+.case-image img.small-project-img {
+  width: 500px !important; 
+  max-width: 200% !important;
+  height: auto;
 }
 
 /* Gallery grid */
@@ -921,7 +926,29 @@ body{
 @media (max-width: 640px) {
   .case-gallery { grid-template-columns: 1fr; }
 }
+/*video formatting*/
+.sidebar-video {
+  display: block !important;
+  width: 50% !important;
+  /* Adjust this value to exactly the size you want (e.g., 180px, 200px) */
+  max-width: 50px, 50px !important; 
+  
+  /* Forces the browser to keep the video's shape so it doesn't collapse */
+  aspect-ratio: 16 / 9; 
+  object-fit: cover;
+  
+  margin: 0 auto !important;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  background-color: #000; /* Acts as a fallback if the video takes time to load */
+}
 
+/* Ensure the card allows the video to be seen */
+.aside-card {
+  min-height: auto !important;
+  overflow: visible !important;
+}
+}
 }
 
 
