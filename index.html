@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/traditional art/dragon png - left facing.png">
 </head>
+
 <body>
   <div class="page">
     <header class="site-header">
@@ -27,12 +28,18 @@
         <div class="hero-text">
           <p class="kicker">Design · Visual Media</p>
           <h1>Elaine Yu is designing playful visuals and interfaces ✴˚⋆</h1>
-          <p class="hero-subtitle">
-            Currently exploring where
-            storytelling, branding, and interaction design meet!
-          </p>
+          <!--animated subtitle-->
+
+              <p class="hero-subtitle">
+                She’s probably...
+                <span class="hero-actionwrap">
+                  <span id="hero-action" class="hero-action">redesigning a landing page</span>
+                  <img id="hero-action-icon" class="hero-action-icon" src="assets/icons/music.svg" alt="" aria-hidden="true">
+                  </span>
+              </p>
+
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#work">⋆ View selected work ⋆</a>
+            <a class="btn btn-primary" href="#work">View selected work</a>
             <!--<a class="btn btn-ghost" href="art.html">Explore art</a>-->
          </div>
           <div class="hero-visuals" aria-hidden="true">
@@ -63,7 +70,7 @@
           <article class="project-card">
             <div class="project-meta">
               <p class="project-year">2026</p>
-              <p class="project-role">Brand ⋆ Web ⋆ Design</p>
+              <p class="project-role">Brand ✴ Web ✴ Design</p>
             </div>
             <div class="project-content">
               <h3><a href="work/hackduke-2026.updated.html" class="project-title-link">Designing + Building a Hackathon Website for 2,000+ users</a></h3>
@@ -86,7 +93,7 @@
           <article class="project-card">
             <div class="project-meta">
               <p class="project-year">2025</p>
-              <p class="project-role">Design · Data Storytelling</p>
+              <p class="project-role">Design ✴ Data Storytelling</p>
             </div>
             <div class="project-content">
               <h3><a href="work/nebraska-flood.updated.html" class="project-title-link">Simplified Geospatial Flood Risk Data for 8,000+ At-Risk Residents</a></h3>
@@ -127,7 +134,7 @@
             </div>
             <div>
               <h3>Location</h3>
-              <p>Durham, NC · ET</p>
+              <p>Durham, NC · EST</p>
               <div class="about-layout"
               <p><img src="assets/traditional art/chapel headshot - cropped 1.jpg" alt="My Grandparent's Village" />
 </p>
@@ -157,6 +164,44 @@
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+<!--HERO SUBTITLE ACTION-->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = [
+      { text: "redesigning a landing page", icon: "assets/icons/figma logo.png" },
+      { text: "exploring the capabilities of LLM tools", icon: "assets/icons/ChatGPT_logo.svg.png" },
+      { text: "using her favorite software", icon: "assets/icons/arcgis.svg" },
+      { text: "debugging CSS at 2am", icon: "assets/icons/code.svg" },
+      { text: "studying :(", icon: "assets/icons/book.svg" }
+    ];
+
+    const textEl = document.getElementById("hero-action");
+    const iconEl = document.getElementById("hero-action-icon");
+    if (!textEl || !iconEl) return;
+
+    let i = 0;
+
+    function swap() {
+      i = (i + 1) % items.length;
+
+      // fade out
+      textEl.style.opacity = "0";
+      iconEl.style.opacity = "0";
+
+      setTimeout(() => {
+        textEl.textContent = items[i].text;
+        iconEl.src = items[i].icon;
+
+        // fade in
+        textEl.style.opacity = "1";
+        iconEl.style.opacity = "0.85";
+      }, 220);
+    }
+
+    setInterval(swap, 3000);
+  });
+</script>
 </body>
 </html>
 
