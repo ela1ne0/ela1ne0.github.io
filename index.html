@@ -27,16 +27,24 @@
       <section class="hero hero-split">
         <div class="hero-text">
           <p class="kicker">Design · Visual Media</p>
-          <h1>Elaine Yu is designing playful visuals and interfaces ✴˚⋆</h1>
+          <h1>Elaine Yu ✴˚⋆ designs at the intersection of code ⌁, illustration ☁︎, and visual storytelling ✦</h1>
+          
           <!--animated subtitle-->
 
               <p class="hero-subtitle">
                 She’s probably...
                 <span class="hero-actionwrap">
-                  <span id="hero-action" class="hero-action">redesigning a landing page</span>
-                  <img id="hero-action-icon" class="hero-action-icon" src="assets/icons/music.svg" alt="" aria-hidden="true">
+
+                  <span id="hero-action" class="hero-action">
+                      exploring the capabilities of LLM tools
                   </span>
-              </p>
+                  <span id="hero-icons" class="hero-icons">
+                    <img src="assets/icons/ChatGPT_logo.svg.png" class="hero-action-icon">
+                    <img src="assets/icons/cursorlogo.png" class="hero-action-icon">
+                  </span>
+
+                </span>
+                </p>
 
           <div class="hero-cta">
             <a class="btn btn-primary" href="#work">View selected work</a>
@@ -60,6 +68,10 @@
              <!--small clouds-->
              <div class="hero-smallclouds">
                 <img src="assets/hero/small clouds.svg" alt="" class="hero-smallclouds-img" />
+            </div>
+            <!--small clouds no2-->
+             <div class="hero-smallcloudscopy">
+                <img src="assets/hero/small-clouds-2.svg" alt="" class="hero-smallcloudscopy-img" />
             </div>
             </div>
       </section>
@@ -167,40 +179,94 @@
 
 <!--HERO SUBTITLE ACTION-->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const items = [
-      { text: "redesigning a landing page", icon: "assets/icons/figma logo.png" },
-      { text: "exploring the capabilities of LLM tools", icon: "assets/icons/ChatGPT_logo.svg.png" },
-      { text: "using her favorite software", icon: "assets/icons/arcgis.svg" },
-      { text: "debugging CSS at 2am", icon: "assets/icons/code.svg" },
-      { text: "studying :(", icon: "assets/icons/book.svg" }
-    ];
+document.addEventListener("DOMContentLoaded", () => {
 
-    const textEl = document.getElementById("hero-action");
-    const iconEl = document.getElementById("hero-action-icon");
-    if (!textEl || !iconEl) return;
+const items = [
 
-    let i = 0;
+{
+text: "redesigning a landing page",
+icons: ["assets/icons/figma logo.png"],
+link: null,
+className: ""
+},
 
-    function swap() {
-      i = (i + 1) % items.length;
+{
+text: "listening to music",
+icons: ["assets/icons/SpotifyLogo.png"],
+link: "https://open.spotify.com/user/q0xzx8ebk5ji1hvc369yhy34q?si=5da4a611b06b4f94",
+className: "music-action"
+},
 
-      // fade out
-      textEl.style.opacity = "0";
-      iconEl.style.opacity = "0";
+{
+text: "scrolling on Pinterest",
+icons: [],
+link: null,
+className: ""
+},
 
-      setTimeout(() => {
-        textEl.textContent = items[i].text;
-        iconEl.src = items[i].icon;
+{
+text: "tweaking her portfolio for the Nth time",
+icons: [],
+link: null,
+className: ""
+},
 
-        // fade in
-        textEl.style.opacity = "1";
-        iconEl.style.opacity = "0.85";
-      }, 220);
-    }
+{
+text: "studying :(",
+icons: [],
+link: null,
+className: ""
+}
 
-    setInterval(swap, 3000);
-  });
+];
+
+const textEl = document.getElementById("hero-action");
+const iconsEl = document.getElementById("hero-icons");
+
+let i = 0;
+
+function swap(){
+
+i = (i+1) % items.length;
+
+textEl.style.opacity = 0;
+iconsEl.style.opacity = 0;
+
+setTimeout(()=>{
+
+const item = items[i];
+
+iconsEl.innerHTML = item.icons
+.map(icon => `<img src="${icon}" class="hero-action-icon">`)
+.join("");
+
+/* Make text a link if needed */
+if(item.link){
+
+textEl.innerHTML =
+`<a href="${item.link}" target="_blank" class="hero-music-link">
+${item.text}
+</a>`;
+
+} else {
+
+textEl.textContent = item.text;
+
+}
+
+/* Apply special styling */
+textEl.className = "hero-action " + item.className;
+
+textEl.style.opacity = 1;
+iconsEl.style.opacity = 1;
+
+},200);
+
+}
+
+setInterval(swap,3000);
+
+});
 </script>
 </body>
 </html>
