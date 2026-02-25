@@ -52,12 +52,12 @@ body{
   margin: 0 auto;
   padding: 16px 40px;
 }
+
 main,
 .site-footer{
-  width: 100%;
-  max-width: var(--content);
-  margin-left: auto;
-  margin-right: auto;
+  width:100%;
+  max-width:1120px;
+  margin:auto;
 }
 .container {
   max-width: 1120px;
@@ -79,6 +79,7 @@ main,
 .logo{
   font-weight: 600;
   letter-spacing: 0.03em;
+  font-size: clamp(16px, 2.2vw + 1rem, 80px);
   text-transform: uppercase;
   font-size: 0.9rem;
   text-decoration: none;
@@ -132,13 +133,20 @@ main{
 /* =========================================================
    HERO
    ========================================================= */
-.hero{ margin-bottom: 40px; }
-.hero:not(.hero-split){ max-width: 640px; }
+.hero{ margin-bottom: 30px; }
+.hero{
+  max-width: 100%;
+}
 
+/*hero h1 stuff*/
 .hero h1{
-  margin: 0 0 12px;
-  font-size: clamp(2rem, 2vw + 1rem, 2.3rem);
+  margin: 0 0 20px;
+  font-size: clamp(2.2rem, 2.2vw + 1rem, 5rem);
   line-height: 1.1;
+}
+.hero h1{
+  line-height:1.05;
+  letter-spacing:-0.02em;
 }
 
 .hero-subtitle{
@@ -148,7 +156,10 @@ main{
   line-height: 1.6;
 }
 .hero-art{
-  margin-right:-180px;
+  margin-right:-80px;
+}
+.hero-text{
+max-width:600px;
 }
 
 /* CTA buttons */
@@ -184,13 +195,16 @@ main{
 
 /* hero split layout */
 .hero-split{
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: start;
-  gap: 21px;
+  display:grid;
+  grid-template-columns: minmax(400px, 800px) 1fr;
+  align-items:center;
+  gap:36px;
 }
-
+/*hero text*/
 .hero-text{ min-width: 0; }
+.hero-text{
+  max-width: 720px;
+}
 
 .hero-art{
   position: relative;
@@ -263,58 +277,82 @@ main{
   }
 
 /* Dragon: base + hover + idle float */
-@keyframes floatDragon{
-  0%   { transform: translateY(-30px); }
-  50%  { transform: translateY(-15px); }
-  100% { transform: translateY(-30px); }
+
+/* Dragon positioning variables */
+:root{
+  --dragon-x: -120px;
+  --dragon-y: -70px;
 }
 
+/* Floating animation */
+@keyframes floatDragon{
+  0% {
+    transform:
+      translateX(var(--dragon-x))
+      translateY(var(--dragon-y));
+  }
+
+  50% {
+    transform:
+      translateX(var(--dragon-x))
+      translateY(calc(var(--dragon-y) + 20px));
+  }
+
+  100% {
+    transform:
+      translateX(var(--dragon-x))
+      translateY(var(--dragon-y));
+  }
+}
+
+
+/* Dragon styling/sizing */
 .hero-dragon{
-  display: block;
-  width: auto;
-  max-width: 170px;
-  max-height: 170px;
-  height: auto;
+  display:block;
+  width:auto;
+  max-width:250px;
+  max-height:250px;
 
-  /* placement */
-  margin-right: 70px;
+  opacity:0.85;
 
-  opacity: 0.85;
-  object-fit: contain;
   filter: drop-shadow(0 6px 16px rgba(0,0,0,0.10));
 
-  /* animation */
   animation: floatDragon 4s ease-in-out infinite;
-  transition: transform 0.35s ease;
-  transform-origin: center;
+
+  transform-origin:center;
 }
 
+/* Hover */
 .hero-dragon:hover{
   animation-play-state: paused;
-  transform: translateY(-23px) rotate(-10deg);
+
+  transform:
+    translateX(var(--dragon-x))
+    translateY(calc(var(--dragon-y) + 5px))
+    rotate(-10deg);
 }
 
 /* Clouds / ornaments */
 .hero-clouds{
   position: absolute;
   right: 0;
-  bottom: -180px;
+  bottom: -150px;
   z-index: 1;
   pointer-events: none;
 }
 .hero-clouds-img{
   display: block;
   width: auto;
-  max-width: 350px;
-  max-height: 400px;
+  max-width: 450px;
+  max-height: 500px;
   object-fit: contain;
 }
 
 /*SMALL CLOUD ANIMATION*/
 .hero-smallclouds{
   position: absolute;
-  right: 270px;
-  bottom: -30px;
+  right: 350px;
+  bottom: 40px;
   z-index: 1;
   transition: transform 0.5s ease;
   
@@ -322,17 +360,17 @@ main{
 
 /*function to make clouds float like dragon*/
 @keyframes floatCloud{
-  0%   { transform: translateY(-15px); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(-15px); }
+  0%   { transform: translateX(-30px); }
+  50%  { transform: translateX(-10px); }
+  100% { transform: translateX(-30px); }
 }
 
-
+/*SMALL CLOUD SIZING*/
 .hero-smallclouds-img{
   display: block;
   width: auto;
-  max-width: 140px;
-  max-height: 150px;
+  max-width: 200px;
+  max-height: 200px;
   object-fit: contain;
 
   /*animation*/
@@ -345,27 +383,27 @@ main{
   transform: translateX(-50px);
 }
 
-/*SMALL CLOUD ANIMATION - COPY*/
-
+/*SMALLER CLOUD ANIMATION - COPY*/
 /*made the animation slightly diff for small cloud*/
 @keyframes floatCloud2{
-  0%   { transform: translateY(20px); }
-  50%  { transform: translateY(0px); }
-  100% { transform: translateY(20px); }
+  0%   { transform: translateX(20px); }
+  50%  { transform: translateX(0px); }
+  100% { transform: translateX(20px); }
 }
 
 .hero-smallcloudscopy{
   position: absolute;
-  right: 230px;        /* move further right */
-  bottom: 180px;       /* bring upward */
+  right: 260px;        /* move further right */
+  bottom: 250px;       /* bring upward */
   z-index: 0;         /* place behind dragon but above background */
   transition: transform 0.3s ease;
 }
 
+/*SMALL CLOUD COPY SIZING*/
 .hero-smallcloudscopy-img{
   display: block;
   width: auto;
-  max-width: 60px;    /* smaller than first cloud */
+  max-width: 100px;    /* smaller than first cloud */
   object-fit: contain;
 
   /*animation*/
@@ -382,14 +420,14 @@ main{
 .hero-yueshan{
   position: absolute;
   right: 90px;
-  bottom: -190px;
+  bottom: -175px; /*bring up*/
   z-index: 1;
 }
 .hero-yueshan-img{
   display: block;
   width: auto;
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 270px;
+  max-height: 270px;
   object-fit: contain;
 }
 
@@ -418,9 +456,9 @@ main{
    SECTIONS (HOME)
    ========================================================= */
 .section{
-  padding-top: 32px;
+  padding-top: 40px;
   border-top: 1px solid var(--border-subtle);
-  margin-top: 28px;
+  margin-top: 40px;
 }
 .section h2{
   margin: 0 0 20px;
@@ -438,8 +476,8 @@ main{
 
 .project-card{
   display: grid;
-  grid-template-columns: minmax(0, 200px) minmax(0, 1fr) 140px;
-  gap: 24px;
+  grid-template-columns: 180px 1fr 180px;
+  gap:40px;
   padding: 18px 0;
   border-top: 1px solid var(--border-subtle);
   transition: transform .15s ease, box-shadow .15s ease;
@@ -578,6 +616,104 @@ margin-bottom:4px;
 .about-meta p{
 margin:0;
 color:var(--text);
+}
+
+/* ===============================
+   MODERN ABOUT LAYOUT
+   =============================== */
+
+.about-modern{
+display:grid;
+grid-template-columns: 1fr 420px;
+gap:80px;
+margin-top:40px;
+align-items:start;
+
+}
+
+
+/* LEFT COLUMN */
+
+.about-left{
+max-width:600px;
+}
+
+
+.about-block{
+margin-bottom:36px;
+}
+
+
+.about-label{
+font-size:0.75rem;
+letter-spacing:0.14em;
+text-transform:uppercase;
+color:var(--text-muted);
+margin-bottom:10px;
+font-weight:600;
+}
+
+
+.about-block p{
+line-height:1.75;
+color:var(--text-muted);
+margin:0;
+}
+
+
+/* RIGHT GRID */
+.about-right{
+display:grid;
+grid-template-columns: 1fr 1fr;
+gap:18px;
+}
+
+
+.about-card{
+position:relative;
+border-radius:20px;
+overflow:hidden;
+height:220px;
+box-shadow:var(--shadow-soft);
+}
+
+
+.about-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+
+/* overlay tint */
+.about-card::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.25);
+}
+
+
+/* label */
+
+.about-card-label{
+position:absolute;
+top:14px;
+left:16px;
+color:white;
+font-size:0.95rem;
+letter-spacing:0.06em;
+font-weight:500;
+z-index:2;
+}
+
+.about-card{
+transition: transform .25s ease;
+}
+
+.about-card:hover{
+transform: translateY(-6px);
 }
 /* =========================================================
    CONTACT
@@ -777,6 +913,10 @@ color:var(--text);
   color: var(--text-muted);
 }
 .project-back:hover{ color: var(--text); }
+
+.work h2{
+margin-bottom:-10px;
+}
 
 /* =========================================
    QUICK FACTS (Editorial Portfolio Style)

@@ -77,6 +77,7 @@
             </div>
       </section>
 
+      <!--SELECTED WORK-->
       <section id="work" class="section work">
         <h2>Selected Work</h2>
         <div class="projects">
@@ -89,7 +90,7 @@
               <h3><a href="work/hackduke-2026.updated.html" class="project-title-link">Designing + Building a Hackathon Website for 2,000+ users</a></h3>
               <p>
                 <strong>Lead Landing Page Designer</strong> for Duke’s biggest hackathon. 
-                Individually owned the end-to-end design of the 2026 landing page and collaborated with a 7-member team to scale a brand ecosystem. 
+                Individually owned the end-to-end design of the 2026 landing page and collaborated with a 6-member team to scale a brand ecosystem. 
                 Results included a <strong>80% increase in registrations</strong> and a unified visual system across <strong>10+</strong> digital and physical touchpoints.
               </p>
               <a class="project-link" href="work/hackduke-2026.updated.html">View project →</a>
@@ -125,71 +126,84 @@
         </div>
       </section>
 
-      <!--ABOUT-->
-      <section id="about" class="section about">
+      <!--ABOUT SECTION-->
+      <section id="about">
+      <section class="about-modern">
+      <div class="about-left">
 
-<div class="about-header">
-<h2>About</h2>
+      <div class="about-block">
+    <div class="about-label">Today</div>
 
-<p class="about-intro">
-Hi! I'm Elaine — a designer working at the intersection of visual craft, storytelling, and code.
-</p>
-
-</div>
-
-
-<div class="about-layout">
-
-<div class="about-text">
+        <p>
+          I'm a product and visual designer studying Computer Science and
+          Visual Media Studies at Duke University. I design interfaces,
+          brand systems, and digital experiences that balance technical
+          thinking with visual craft.
+        </p>
+    </div>
+    <div class="about-block">
+    <div class="about-label">Background</div>
+        <p>
+          I work across product design, illustration, and front-end
+          development. My projects range from hackathon platforms serving
+          thousands of users to public-interest design projects and
+          interactive visual systems.
+        </p>
+    </div>
+    <div class="about-block">
+    <div class="about-label">Approach</div>
 
 <p>
-I'm a student at Duke University studying Computer Science and Visual Media Studies.
-My work focuses on building thoughtful digital experiences through strong visual
-systems and clear interaction design.
+I enjoy building things end-to-end — from early sketches
+and prototypes to polished interfaces and working code.
+I focus on clarity, storytelling, and thoughtful interaction.
 </p>
-
+</div>
+<div class="about-block">
+<div class="about-label">Goal</div>
 <p>
-I enjoy translating complex ideas into approachable visuals — from event branding
-and public communication to interactive web experiences.
+I want to design tools and experiences that feel intuitive,
+playful, and carefully crafted.
 </p>
-
-<p>
-Recently I've been exploring product design, creative coding, and how visual
-storytelling can make technology feel more human.
-</p>
-
-<p class="about-signoff">
-Outside of design, you’ll probably find me listening to music or sketching dragons.
-</p>
-
-</div>
-
-
-<div class="about-side">
-
-<img src="assets/traditional art/chapel headshot - cropped 1.jpg">
-
-<div class="about-meta">
-
-<div>
-<span>Currently</span>
-<p>Duke University</p>
-</div>
-
-<div>
-<span>Focus</span>
-<p>Product Design + Creative Coding</p>
-</div>
-
-<div>
-<span>Location</span>
-<p>Durham, NC</p>
 </div>
 </div>
+<div class="about-right">
+<div class="about-card">
+<img src="assets/about/music.jpg">
+
+<div class="about-card-label">
+music
 </div>
+
+</div>
+<div class="about-card">
+
+<img src="assets/about/design.jpg">
+
+<div class="about-card-label">
+design
+</div>
+</div>
+<div class="about-card">
+<img src="assets/about/code.jpg">
+
+<div class="about-card-label">
+code
+</div>
+</div>
+<div class="about-card">
+<img src="assets/about/art.jpg">
+
+<div class="about-card-label">
+art
+</div>
+</div>
+
 </div>
 </section>
+</section>
 
+    <!--CONTACT SECTION-->
       <section id="contact" class="section contact">
         <h2>Contact</h2>
         <p>
@@ -247,7 +261,7 @@ className: ""
 },
 
 {
-text: "studying :(",
+text: "studying :/",
 icons: [],
 link: null,
 className: ""
@@ -284,9 +298,7 @@ ${item.text}
 </a>`;
 
 } else {
-
 textEl.textContent = item.text;
-
 }
 
 /* Apply special styling */
