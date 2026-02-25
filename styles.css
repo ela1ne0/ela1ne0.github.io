@@ -152,7 +152,7 @@ main{
 .hero-subtitle{
   margin: 0;
   color: var(--text-muted);
-  max-width: 30rem;
+  max-width: 35rem;
   line-height: 1.6;
 }
 .hero-art{
@@ -162,6 +162,33 @@ main{
 max-width:600px;
 }
 
+/*hero gradient bg*/
+.hero::before{
+  pointer-events: none;
+}
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:1200px;
+height:700px;
+
+background:radial-gradient(
+ellipse,
+rgba(70, 117, 183, 0.2),
+transparent 100%
+);
+
+z-index:0;
+
+}
 /* CTA buttons */
 .hero-cta{
   display: flex;
@@ -750,7 +777,7 @@ transform: translateY(-6px);
 
 /* =========================================================
    ART PAGE
-   ========================================================= */
+   ========================================================= 
 .art-hero{
   max-width: 640px;
   margin-bottom: 40px;
@@ -814,6 +841,96 @@ transform: translateY(-6px);
   transform: translateY(-3px);
   box-shadow: var(--shadow-soft);
 }
+
+//* ===============================
+   EDITORIAL ART GRID (SNUG)
+   =============================== */
+
+.art-modern-grid{
+
+column-count:3;
+column-gap:18px;
+
+margin-top:30px;
+
+}
+
+
+/* Cards */
+
+.art-card{
+
+display:inline-block;
+
+width:100%;
+
+margin-bottom:18px;
+
+border-radius:22px;
+
+overflow:hidden;
+
+position:relative;
+
+background:#000;
+
+box-shadow:var(--shadow-soft);
+
+transition:transform .25s ease;
+
+break-inside:avoid;
+
+}
+
+
+.art-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+
+/* Images fit naturally */
+
+.art-card img{
+
+width:100%;
+
+height:auto;
+
+display:block;
+
+object-fit:cover;
+
+}
+/* Gradient overlay */
+.art-card::after{
+content:"";
+position:absolute;
+inset:0;
+
+background:linear-gradient(
+transparent 65%,
+rgba(0,0,0,0.7)
+);
+
+}
+
+.art-overlay{
+position:absolute;
+bottom:14px;
+left:16px;
+right:16px;
+display:flex;
+justify-content:space-between;
+
+color:white;
+font-size:0.95rem;
+font-weight:500;
+z-index:2;
+
+}
+
 
 /* =========================================================
    PROJECT / WORK DETAIL PAGES (EDITORIAL NOTION STYLE BASE)
