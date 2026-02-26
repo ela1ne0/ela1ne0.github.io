@@ -187,7 +187,9 @@ transparent 100%
 );
 
 z-index:0;
-
+}
+.hero{
+  position: relative;
 }
 /* CTA buttons */
 .hero-cta{
@@ -307,7 +309,7 @@ z-index:0;
 
 /* Dragon positioning variables */
 :root{
-  --dragon-x: -120px;
+  --dragon-x: -155px;
   --dragon-y: -70px;
 }
 
@@ -420,7 +422,7 @@ z-index:0;
 
 .hero-smallcloudscopy{
   position: absolute;
-  right: 260px;        /* move further right */
+  right: 300px;        /* move further right */
   bottom: 250px;       /* bring upward */
   z-index: 0;         /* place behind dragon but above background */
   transition: transform 0.3s ease;
@@ -561,186 +563,214 @@ z-index:0;
 .project-title-link:hover{ color: var(--accent); }
 
 /* hover lift */
-.project-card:hover{
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-soft);
+.project-card:hover {
+  background: rgba(120, 163, 222, 0.05); /* Soft blue from your palette */
+  transform: translateX(8px); /* Horizontal shift instead of vertical */
+  transition: all 0.3s ease;
 }
 
+
+/* --- SELECTED WORK REDESIGN --- */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 90px; /* Consistent spacing between projects */
+  margin-top: 40px;
+}
+
+.project-entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Balanced split layout */
+  gap: 48px;
+  align-items: start;
+}
+
+.project-thumb {
+  width: 90%;
+  aspect-ratio: 14 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px rgba(0, 48, 110, 0.05);
+  transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Typography Hierarchy */
+.project-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 8px 0 16px;
+  color: var(--text);
+}
+
+.project-meta {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.project-impact {
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.project-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* Subtle Modern Hover */
+.project-entry:hover .project-thumb {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 48, 110, 0.1);
+}
+
+@media (max-width: 860px) {
+  .project-entry { grid-template-columns: 1fr; gap: 24px; }
+}
 /* =====================================
-   ABOUT — Product Design Style
+   ABOUT — Deck layout (final)
    ===================================== */
 
-.about-header{
-max-width:700px;
-margin-bottom:40px;
-}
-
-.about-intro{
-font-size:1.2rem;
-line-height:1.6;
-color:var(--text);
-margin-top:10px;
-}
-
-.about-layout{
-display:grid;
-grid-template-columns: minmax(400px,700px) 320px;
-gap:80px;
-align-items:start;
-}
-
-/* Left column */
-
-.about-text{
-max-width:520px;
-}
-
-.about-text p{
-line-height:1.75;
-color:var(--text-muted);
-margin-bottom:16px;
-}
-
-/* Signature line */
-
-.about-signoff{
-margin-top:22px;
-font-style:italic;
-}
-
-/* Right column */
-
-.about-side{
-display:flex;
-flex-direction:column;
-gap:24px;
-}
-
-.about-side img{
-width:160px;
-border-radius:14px;
-border:1px solid var(--border-subtle);
-}
-
-/* Meta block */
-
-.about-meta{
-display:flex;
-flex-direction:column;
-gap:20px;
-font-size:0.9rem;
-}
-
-.about-meta span{
-display:block;
-font-size:0.7rem;
-letter-spacing:0.14em;
-text-transform:uppercase;
-color:var(--text-muted);
-margin-bottom:4px;
-}
-
-.about-meta p{
-margin:0;
-color:var(--text);
-}
-
-/* ===============================
-   MODERN ABOUT LAYOUT
-   =============================== */
-
 .about-modern{
-display:grid;
-grid-template-columns: 1fr 420px;
-gap:80px;
-margin-top:40px;
-align-items:start;
-
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 64px;
+  align-items: start;
+  margin-top: 24px;
 }
-
 
 /* LEFT COLUMN */
-
 .about-left{
-max-width:600px;
+  max-width: 640px;
 }
-
 
 .about-block{
-margin-bottom:36px;
+  margin-bottom: 28px;
 }
-
 
 .about-label{
-font-size:0.75rem;
-letter-spacing:0.14em;
-text-transform:uppercase;
-color:var(--text-muted);
-margin-bottom:10px;
-font-weight:600;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  font-weight: 600;
 }
-
 
 .about-block p{
-line-height:1.75;
-color:var(--text-muted);
-margin:0;
+  margin: 0;
+  line-height: 1.75;
+  color: var(--text-muted);
 }
 
+.about-block p + p{
+  margin-top: 12px;
+}
 
-/* RIGHT GRID */
+/* RIGHT COLUMN (deck) */
 .about-right{
-display:grid;
-grid-template-columns: 1fr 1fr;
-gap:18px;
+  display: flex;
+  justify-content: flex-end;
 }
 
-
-.about-card{
-position:relative;
-border-radius:20px;
-overflow:hidden;
-height:220px;
-box-shadow:var(--shadow-soft);
+/* Deck button */
+.about-deck{
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 4 / 5; /* portrait-friendly */
+  border: 0;
+  padding: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  display: block;
+  transition: transform .18s ease;
 }
 
-
-.about-card img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
+.about-deck:hover{
+  transform: translateY(-3px);
 }
 
-
-/* overlay tint */
-.about-card::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.25);
+/* Image */
+.about-deck img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+  display: block;
 }
 
-
-/* label */
-
-.about-card-label{
-position:absolute;
-top:14px;
-left:16px;
-color:white;
-font-size:0.95rem;
-letter-spacing:0.06em;
-font-weight:500;
-z-index:2;
+/* Gradient overlay for readability */
+.about-deck::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.55));
+  pointer-events:none;
 }
 
-.about-card{
-transition: transform .25s ease;
+/* Label + hint */
+.about-deck-label{
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 2;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-.about-card:hover{
-transform: translateY(-6px);
+.about-deck-hint{
+  position:absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 2;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Optional: peeking card behind */
+.about-deck::before{
+  content:"";
+  position:absolute;
+  inset: 10px -10px -10px 10px;
+  border-radius: 22px;
+  background: rgba(0,0,0,0.06);
+  transform: rotate(2deg);
+  z-index:-1;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .about-modern{
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .about-right{
+    justify-content: flex-start;
+  }
+  .about-deck{
+    max-width: 520px;
+  }
 }
 /* =========================================================
    CONTACT
@@ -961,6 +991,12 @@ z-index:2;
   letter-spacing: -0.02em;
 }
 
+/* Editorial Typography */
+h1 {
+  letter-spacing: -0.03em; /* Tighter letter spacing for big headlines */
+  line-height: 1.05;
+}
+
 .project-page-lead{
   margin: 0;
   font-size: 1.15rem;
@@ -973,6 +1009,19 @@ z-index:2;
   border-top: 1px solid var(--border-subtle);
   max-width: 760px;
   margin: 0 auto;
+}
+
+
+
+/* Refined Border System */
+.project-card, .aside-card {
+  border: 1px solid rgba(0, 48, 110, 0.08); /* Use your text color at low opacity */
+  border-radius: 12px;
+}
+
+/* Atmospheric Background */
+.page {
+  background: radial-gradient(circle at top right, rgba(120, 163, 222, 0.08) 0%, #FFFFFF 40%);
 }
 
 /* Case sections */
@@ -1099,4 +1148,152 @@ margin-bottom:-10px;
   }
 
   .hero-art{ order: 1; }
+
+  /* --- EDITORIAL CENTERED LAYOUT --- */
+.project-page-body, .case-grid {
+  display: block !important; /* Disables the 2-column sidebar gap */
+  width: 100% !important;
+  max-width: 850px !important; /* Optimized for readability */
+  margin: 0 auto !important;
+}
+
+.project-page-header, .case-section {
+  text-align: center !important;
+  margin-bottom: 5rem;
+}
+
+/* Centered Quick Facts */
+.facts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+/* Polished Video Formatting */
+.editorial-video {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 48, 110, 0.1);
+  margin: 0 auto;
+}
+
+/* Standardized Spacing */
+.case-section h2 {
+  font-size: var(--step-2);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.case-section p {
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* --- FIX: CENTERED EDITORIAL LAYOUT --- */
+
+/* 1. Remove the grid reservation for the 260px sidebar */
+.project-page-body {
+  display: block !important; 
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* 2. Center the main container and content */
+.case-grid, .case-main {
+  display: block !important;
+  max-width: 800px !important; /* Ideal width for reading */
+  margin: 0 auto !important;
+}
+
+/* 3. Global Text Centering */
+.project-page-header, .case-section {
+  text-align: center !important;
+}
+
+/* 4. Keep bullet points readable while centered */
+.case-section ul {
+  display: inline-block;
+  text-align: left;
+}
+
+
+/* 5. Center and size the video */
+.centered-video {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 12px;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* 6. Fix the "Aside" cards so they stack vertically and center */
+.aside-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.aside-card {
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+}
+/* --- FULL CENTERING & SIDEBAR REMOVAL --- */
+
+/* 1. Kill the 260px reserved sidebar column */
+.project-page-body, .case-grid {
+  display: block !important; 
+  width: 100% !important;
+  max-width: 800px !important; /* Limits width for readability */
+  margin: 0 auto !important;
+}
+
+/* 2. Global Alignment */
+.project-page-header, .case-section, .case-main {
+  text-align: center !important;
+}
+
+/* 3. Center and Scale Media */
+.centered-video {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  border-radius: 16px;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: var(--shadow-soft);
+}
+
+.case-image img {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* 4. Center Lists & Cards */
+.case-section ul {
+  display: inline-block;
+  text-align: left; /* Keeps bullets aligned while block is centered */
+}
+
+.summary-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.aside-card {
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+}
 }
