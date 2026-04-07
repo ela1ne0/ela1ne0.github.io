@@ -22,7 +22,16 @@
   <a href="../index.html#contact">Contact</a>
 </nav>
     </header>
-
+<!--
+  <section class="playground-section">
+  <div class="playground-container" id="gallery-container">
+    <div class="playground-center">
+      <h2>Playground</h2>
+      <p>Scroll to spin</p>
+    </div>
+    </div>
+</section>
+-->
     <main>
       <section class="art-hero">
         <p class="kicker">Illustration · Visual Art · Small Projects</p>
@@ -115,8 +124,8 @@
 
 
 </div>
-
 </section>
+
     </main>
 
     <footer class="site-footer">
@@ -124,8 +133,63 @@
     </footer>
   </div>
 
-  <script>
+  <!--<script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("gallery-container");
+  if (!container) return;
+
+  const radius = 240; // Smaller radius = tighter circle
+  const items = [
+    { img: "../assets/health hound/health hound ss 2.png" },
+    { img: "../assets/hackduke page/landing page - by elaine (better vers) + big.png" },
+    { img: "assets/NE flood page/landing page - updated.png" },
+    { img: "assets/about/art.jpg" },
+    { img: "assets/about/code.jpg" },
+    { img: "assets/about/tarotcards.jpg" }
+  ];
+
+  const totalItems = items.length;
+
+  items.forEach((item, i) => {
+    const el = document.createElement("div");
+    el.className = "gallery-item";
+    el.innerHTML = `<img src="${item.img}" style="width:100%; height:100%; object-fit:cover;" />`;
+    container.appendChild(el);
+  });
+
+  const galleryItems = document.querySelectorAll(".gallery-item");
+
+  function updateGallery() {
+    const section = document.querySelector('.playground-section');
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight - window.innerHeight;
+    const scrollRelative = window.scrollY - sectionTop;
+    
+    let scrollPercent = Math.max(0, Math.min(1, scrollRelative / sectionHeight));
+    
+    // Slower rotation: 1.5 * PI instead of 2 * PI for a gentler spin
+    const rotationAngle = scrollPercent * Math.PI * 1.5; 
+
+    galleryItems.forEach((item, i) => {
+      const baseAngle = (i / totalItems) * Math.PI * 2;
+      const currentAngle = baseAngle + rotationAngle;
+
+      // Trigonometry placement
+      const x = Math.cos(currentAngle) * radius;
+      const y = Math.sin(currentAngle) * radius;
+
+      // Use translate to move cards relative to their 50%/50% start position
+      item.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${-rotationAngle}rad)`;
+    });
+  }
+
+  window.addEventListener("scroll", updateGallery);
+  updateGallery(); 
+});
+</script>-->
 </body>
 </html>
