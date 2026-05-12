@@ -1361,7 +1361,7 @@ margin-bottom:-10px;
   display: block;
 }
 
-/* Make sure the section has enough height to actually scroll! 
+/* Make sure the section has enough height to actually scroll! */
 .playground-section {
   height: 250vh; 
   margin-top: 100px;
@@ -1374,5 +1374,5 @@ margin-bottom:-10px;
   width: 100%;
   overflow: hidden;
 }
-*/
+
 }
