@@ -1,151 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elaine 俞 — moved to elaineyu.design</title>
-  <meta name="description" content="Elaine Yu's portfolio has moved to elaineyu.design." />
-  <link rel="canonical" href="https://elaineyu.design" />
-  <meta http-equiv="refresh" content="3; url=https://elaineyu.design" />
+  <title>Elaine 俞</title>
+  <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="assets/dragon png - left facing copy.png">
-  <style>
-    :root{
-      --bg: #ffffff;
-      --text: #00306E;
-      --text-muted: #4B6D99;
-      --accent: #78A3DE;
-      --border-subtle: #e0e0e0;
-    }
-    *, *::before, *::after{ box-sizing: border-box; }
-    html, body{
-      margin: 0;
-      min-height: 100vh;
-    }
-    body{
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .wrap{
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 48px 24px;
-    }
-    .card{
-      max-width: 560px;
-      text-align: center;
-    }
-    .logo{
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--text);
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 40px;
-    }
-    .kicker{
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin: 0 0 16px;
-    }
-    h1{
-      font-size: clamp(28px, 4vw, 38px);
-      line-height: 1.25;
-      font-weight: 600;
-      margin: 0 0 16px;
-      letter-spacing: -0.01em;
-    }
-    p.lede{
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--text-muted);
-      margin: 0 0 32px;
-    }
-    .links{
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn{
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: none;
-      border: 1px solid var(--border-subtle);
-      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-    }
-    .btn-primary{
-      background: var(--text);
-      color: #fff;
-      border-color: var(--text);
-    }
-    .btn-primary:hover{
-      transform: translateY(-1px);
-      background: #002655;
-    }
-    .btn-ghost{
-      color: var(--text);
-      background: transparent;
-    }
-    .btn-ghost:hover{
-      transform: translateY(-1px);
-      border-color: var(--accent);
-      background: #f4f8fe;
-    }
-    .stars{
-      color: var(--accent);
-      font-size: 20px;
-      letter-spacing: 4px;
-      margin: 0 0 20px;
-    }
-    footer{
-      text-align: center;
-      padding: 24px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-  </style>
+  <link rel="icon" href="/assets/dragon png - left facing copy.png">
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="card">
-      <span class="logo">Elaine 俞</span>
-      <p class="kicker">Product Design · Visual Media</p>
-      <p class="stars">✴˚⋆ ✦</p>
-      <h1>This portfolio has moved</h1>
-      <p class="lede">
-        You'll now find my work at <strong>elaineyu.design</strong>.
-        Redirecting you there automatically — or click below if it doesn't happen.
-      </p>
-      <div class="links">
-        <a class="btn btn-primary" href="https://elaineyu.design">Go to elaineyu.design →</a>
+  <div class="page">
+    <header class="site-header">
+      <a href="index.html" class="logo">Elaine 俞</a>
+      <nav class="nav">
+        <a href="index.html" class="nav-active">Home</a>
+        <a href="play.html">Play</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero hero-split">
+        
+        <div class="hero-text">
+          <p class="kicker">Product Design · Visual Media</p>
+          <h1>Elaine Yu ✴˚⋆ designs at the intersection of code, illustration, and storytelling ✦</h1>
+          
+          <!--animated subtitle-->
+
+              <p class="hero-subtitle">
+                She’s probably...
+                <span class="hero-actionwrap">
+
+                  <span id="hero-action" class="hero-action">
+                    exploring the capabilities of LLMs
+                  </span>
+                  <span id="hero-icons" class="hero-icons">
+                    <img src="assets/icons/ChatGPT_logo.svg.png" class="hero-action-icon">
+                    <img src="assets/icons/geminilogo.png" class="hero-action-icon">
+                    <img src="assets/icons/cursorlogo.png" class="hero-action-icon">
+                    <img src="assets/icons/claudelogo.png" class="hero-action-icon">
+                  </span>
+
+                </span>
+                </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#work">View selected work</a>
+            <!--<a class="btn btn-ghost" href="art.html">Explore art</a>-->
+         </div>
+          <div class="hero-visuals" aria-hidden="true">
+            <!-- add figma stuff here -->
+          </div>
+            </div>
+            <!--dragon-->
+            <div class="hero-art" aria-hidden="true">
+                <img src="assets/traditional art/dragon png - left facing.png" alt="" class="hero-dragon" />
+            <!--big clouds-->
+            <div class="hero-clouds">
+                <img src="assets/hero/clouds.svg" alt="" class="hero-clouds-img" />
+            </div>
+            <!--pagoda?-->
+             <div class="hero-yueshan">
+                <img src="assets/hero/Yueshan Pagoda.png" alt="" class="hero-yueshan-img" />
+            </div>
+             <!--small clouds-->
+             <div class="hero-smallclouds">
+                <img src="assets/hero/small clouds.svg" alt="" class="hero-smallclouds-img" />
+            </div>
+            <!--small clouds no2-->
+             <div class="hero-smallcloudscopy">
+                <img src="assets/hero/small-clouds-2.svg" alt="" class="hero-smallcloudscopy-img" />
+            </div>
+            </div>
+            
+      </section>
+
+      <!--SELECTED WORK-->
+      <section id="work" class="section">
+  <h2>Selected Work</h2>
+  <div class="projects-grid">
+
+    <article class="project-entry">
+      <div class="project-thumb">
+        <img src="assets/health hound/health hound ss 2.png" alt="Health Hound Thumbnail">
       </div>
-    </div>
+      <div class="project-content">
+        <div class="project-header">
+          <div class="project-meta">March 2026 · Product Design · UI/UX · Brand</div>
+          <p></p>
+          <h3 class="project-title">HealthHound - FigBuild 2026</h3>
+        </div>
+        <p class="project-impact">Designing a wearable system that translates invisible chemical signals into health insights.</p>
+        <p class="project-desc">Inspired by dogs’ extraordinary scent detection abilities, we created a product and app that effectively gives humans a new sensory layer for understanding their own health.</p>
+        <div class="project-links">
+          <a href="work/healthhound.html" class="project-link">Read More →</a>
+           <a href="https://www.figma.com/deck/ydabbmcwUAiDGAld7GBEkF/HealthHound---Send-Share-vers?node-id=2-229&t=3fCmq80VfPmeaaWy-1" class="project-link">View Pitch →</a>
+        </div>
+      </div>
+    </article>
+
+
+    <article class="project-entry">
+      <div class="project-thumb">
+        <img src="assets/hackduke page/landing page - by elaine (better vers) + big.png" alt="HackDuke Redesign Mockup">
+      </div>
+      <div class="project-content">
+        <div class="project-header">
+          <div class="project-meta">2025 – Present · UI/UX Lead · Brand & Web</div>
+          <p></p>
+          <h3 class="project-title">HackDuke 2026</h3>
+        </div>
+        <p class="project-impact">Redesigning the registration experience for 500+ annual participants, increasing total registrations by 80%</p>
+        <p class="project-desc">Led the end-to-end redesign of the landing page and visual system. Accelerated early-stage design by 30% using rapid prototyping tools and unified 10+ digital assets into a cohesive brand.</p>
+        <div class="project-links">
+          <a href="work/hackduke-2026.updated.html" class="project-link">Read More →</a>
+          <a href="https://2026.hackduke.org/" class="project-link">View Website →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-entry">
+      <div class="project-thumb">
+        <img src="assets/NE flood page/landing page - updated.png" alt="Nebraska Flood Interface">
+      </div>
+      <div class="project-content">
+        <div class="project-header">
+          <div class="project-meta">June 2024 – August 2025 · Product Design Intern · Research</div>
+          <p></p>
+          <h3 class="project-title">Nebraska Flood Outreach</h3>
+        </div>
+        <p class="project-impact">Translating complex GIS data into accessible visuals reaching 8,000+ residents across 59 rural communities.</p>
+        <p class="project-desc">Designed user-centered flood-risk outreach adopted by <strong>U.S. HUD-related stakeholders.</strong> Reduced disaster outreach iteration time by 30% through AI-assisted design and human-led review.</p>
+        <div class="project-links">
+          <a href="work/nebraska-flood.updated.html" class="project-link">Read More →</a>
+        </div>
+      </div>
+    </article>
+
   </div>
-  <footer>
-    <p>&copy;<span id="year"></span> Elaine Yu</p>
-  </footer>
+</section>
+
+      <!--ABOUT SECTION-->
+      <!--ABOUT SECTION-->
+<section id="about" class="section about">
+  <h2>About</h2>
+
+  <div class="about-modern">
+    <div class="about-left">
+
+      <div class="about-block">
+        <div class="about-label">TL;DR</div>
+        <p>
+          I’m a <strong>product</strong> and <strong>visual designer</strong> at <strong>Duke University</strong>
+          studying <strong>Computer Science and Visual Media Studies</strong>.
+          I’m passionate about building complex, narrative-driven digital experiences with a high bar for polish
+          and a focus on social impact.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-label">MY DESIGN STRENGTHS</div>
+        <p>
+          <strong>I enjoy building things end-to-end</strong> — from early sketches and prototypes to polished
+          interfaces and working code. <strong>I lean into LLMs as tools</strong>, allowing me to focus more on
+          storytelling and thoughtful interaction.
+        </p>
+
+        <p style="margin-top:12px;">
+          <strong>System-level thinking:</strong> I move beyond individual screens to build modular libraries.
+          I’m passionate about creating reusable component systems that allow teams to scale effectively while
+          maintaining a consistent visual voice across web and physical environments.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-label">GOAL</div>
+        <p>
+          I want to design tools and experiences that feel <strong>intuitive, playful, and carefully crafted</strong>.
+        </p>
+      </div>
+
+      <div class="about-block">
+        <div class="about-label">I FILL MY FREE TIME WITH...</div>
+        <p>
+          Catching up with friends, trying new restaurants, making more design, taking pictures with my digital camera,
+          and curating Pinterest boards and Spotify playlists.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="about-right">
+  <button class="about-deck" id="aboutDeck" type="button" aria-label="Next photo">
+    <img id="aboutDeckImg" src="assets/about/chapel headshot - cropped.jpg" alt="Elaine photo" />
+    <span class="about-deck-label" id="aboutDeckLabel">Hello!</span>
+
+    <!-- optional: subtle “next” hint 
+    <span class="about-deck-hint">click</span>-->
+  </button>
+</div>
+  </div>
+</section>
+
+    <!--CONTACT SECTION-->
+      <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <p>
+          👋Thanks for stopping by!
+        </p>
+        <p>
+          For collaborations, opportunities, or just to say hi, feel free to reach out!
+        </p>
+        <div class="contact-links">
+          <a href="mailto:elaineyustudio@gmail.com">elaineyustudio@gmail.com</a>
+          <a href="https://www.linkedin.com/in/elaine-yu1/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <!--<a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>-->
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>©<span id="year"></span> Elaine Yu</p>
+    </footer>
+  </div>
   <script>
+    // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+<!--HERO SUBTITLE ACTION-->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+const items = [
+{
+text: "exploring the capabilities of LLMs",
+icons: [
+"assets/icons/ChatGPT_logo.svg.png",
+"assets/icons/geminilogo.png",
+"assets/icons/cursorlogo.png",
+"assets/icons/claudelogo.png"
+],
+link: null,
+className: ""
+},
+
+{
+text: "redesigning a landing page",
+icons: ["assets/icons/figma logo.png"],
+link: null,
+className: ""
+},
+
+{
+text: "listening to music",
+icons: ["assets/icons/SpotifyLogo.png"],
+link: "https://open.spotify.com/user/q0xzx8ebk5ji1hvc369yhy34q?si=5da4a611b06b4f94",
+className: "music-action"
+},
+
+{
+text: "scrolling on Pinterest for inspo",
+icons: [],
+link: null,
+className: ""
+},
+
+{
+text: "tweaking her portfolio for the Nth time",
+icons: [],
+link: null,
+className: ""
+},
+
+{
+text: "studying :/",
+icons: [],
+link: null,
+className: ""
+}
+
+];
+
+const textEl = document.getElementById("hero-action");
+const iconsEl = document.getElementById("hero-icons");
+
+let i = 0;
+
+function swap(){
+
+i = (i+1) % items.length;
+
+textEl.style.opacity = 0;
+iconsEl.style.opacity = 0;
+
+setTimeout(()=>{
+
+const item = items[i];
+
+iconsEl.innerHTML = item.icons
+.map(icon => `<img src="${icon}" class="hero-action-icon">`)
+.join("");
+
+/* Make text a link if needed */
+if(item.link){
+
+textEl.innerHTML =
+`<a href="${item.link}" target="_blank" class="hero-music-link">
+${item.text}
+</a>`;
+
+} else {
+textEl.textContent = item.text;
+}
+
+/* Apply special styling */
+textEl.className = "hero-action " + item.className;
+
+textEl.style.opacity = 1;
+iconsEl.style.opacity = 1;
+
+},200);
+
+}
+
+setInterval(swap,3000);
+
+});
+</script>
+
+<!--ABOUT SECTION CARD ANIMATION-->
+<!--
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const deck = document.getElementById("aboutDeck");
+  const img  = document.getElementById("aboutDeckImg");
+  const label = document.getElementById("aboutDeckLabel");
+  if (!deck || !img || !label) return;
+
+  const cards = [
+    { src: "assets/about/chapel headshot - cropped 1.jpg", label: "Hello!" },
+    { src: "assets/about/tarotcards.jpg", label: "problem-solving" },
+    { src: "assets/about/code.jpg", label: "code" },
+    { src: "assets/about/art.jpg", label: "art" }
+  ];
+
+  let i = 0;
+
+  function nextCard(){
+    i = (i + 1) % cards.length;
+
+    // quick “card flip” feel
+    deck.style.transform = "translateY(-2px) rotate(-0.4deg)";
+
+    // fade swap
+    img.style.opacity = "0";
+    label.style.opacity = "0";
+
+    setTimeout(() => {
+      img.src = cards[i].src;
+      label.textContent = cards[i].label;
+
+      img.style.opacity = "1";
+      label.style.opacity = "1";
+      deck.style.transform = "translateY(0) rotate(0deg)";
+    }, 160);
+  }
+
+  // smooth fades
+  img.style.transition = "opacity 160ms ease";
+  label.style.transition = "opacity 160ms ease";
+
+  deck.addEventListener("click", nextCard);
+});
+</script>
+-->
 </body>
 </html>
