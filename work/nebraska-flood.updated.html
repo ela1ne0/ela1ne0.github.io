@@ -1,167 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nebraska Flood Awareness Initiative – Elaine Yu</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta name="description" content="This case study has moved to elaineyu.design." />
+  <link rel="canonical" href="https://elaineyu.design" />
+  <meta http-equiv="refresh" content="3; url=https://elaineyu.design" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="/assets/dragon png - left facing copy.png">
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #00306E;
+      --text-muted: #4B6D99;
+      --accent: #78A3DE;
+      --border-subtle: #e0e0e0;
+    }
+    *, *::before, *::after{ box-sizing: border-box; }
+    html, body{ margin: 0; min-height: 100vh; }
+    body{
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .wrap{
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+    }
+    .card{ max-width: 560px; text-align: center; }
+    .logo{
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+    .kicker{
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 16px;
+    }
+    h1{
+      font-size: clamp(28px, 4vw, 38px);
+      line-height: 1.25;
+      font-weight: 600;
+      margin: 0 0 16px;
+      letter-spacing: -0.01em;
+    }
+    p.lede{
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin: 0 0 32px;
+    }
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1px solid var(--text);
+      background: var(--text);
+      color: #fff;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); background: #002655; }
+    .stars{
+      color: var(--accent);
+      font-size: 20px;
+      letter-spacing: 4px;
+      margin: 0 0 20px;
+    }
+    footer{
+      text-align: center;
+      padding: 24px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
 </head>
 <body>
-  <div class="page">
-    <header class="site-header">
-      <a href="../index.html" class="logo">Elaine 俞</a>
-       <nav class="nav">
-        <a href="../index.html">Home</a>
-  <a href="../play.html" class="nav-active">Play</a>
-        <a href="../index.html#about">About</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-  <article class="project-page">
-    <header class="project-page-header">
-      <p class="kicker">Selected Work</p>
-      <p class="project-page-meta">2025 · Web · Interaction · Data</p>
-      <h1>Nebraska Flood Outreach </h1>
-
-      <p class="project-page-lead">
-        In collaboration with the University of Nebraska-Lincoln, 
-        I spearheaded and designed a multi-channel communication system to translate complex GIS flood-risk data into accessible, human-centered visuals for low-income rural populations. 
-        By bridging the gap between deep learning analytics and user-facing design, 
-        I helped create a framework adopted by U.S. HUD-related stakeholders to assist in disaster recovery patterns.
+  <div class="wrap">
+    <div class="card">
+      <span class="logo">Elaine 俞</span>
+      <p class="kicker">Product Design · Visual Media</p>
+      <p class="stars">✴˚⋆ ✦</p>
+      <h1>This case study has moved</h1>
+      <p class="lede">
+        You'll now find my work at <strong>elaineyu.design</strong>.
+        Redirecting you there automatically — or click below if it doesn't happen.
       </p>
-
-      <div class="facts">
-        <div class="fact"><span>Role</span><p>Product Design 
-          Graphic Design
-          Research Intern</p></div>
-        <div class="fact"><span>Team</span><p>Just me! (with faculty research collaboration)</p></div>
-        <div class="fact"><span>Timeline</span><p>3 Months (to design visuals)</p></div>
-        <div class="fact"><span>Tools</span><p>Figma · Procreate · Adobe Illustrator · ArcGIS · GPT-4 · DALL·E</p></div>
-      </div>
-    </header>
-
-    <div class="project-page-body">
-      <div class="case-main">
-        
-        <section class="case-section">
-          <h2>The Challenge</h2>
-          <p>Flood data is typically presented through high-density GIS visualizations that assume technical literacy. 
-            For many rural residents (particularly those with limited digital access) 
-            these maps can feel overwhelming or inaccessible.</p>
-            <p>The challenge was twofold:</p>
-
-<ul>1. Translate complex geospatial flood data into clear, human-centered visuals. 
-    <p>(The visuals would later be distributed in the form of post cards)</p>
-</ul>
-
-<ul>2. Ensure the system met public-sector accessibility and compliance standards.</ul>
-
-<p>This project required balancing scientific accuracy with emotional sensitivity. The information was urgent — but it couldn’t feel alarming.</p>
-          <figure class="case-image">
-            <img src="../assets/NE flood page/landing page - updated.png" alt="Nebraska Flood landing page mockup">
-            <p></p>
-            <figcaption><small>Simplified map design - created in Figma</small></figcaption>
-          </figure>
-        </section>
-
-        <section class="case-section">
-          <h2>Research Foundation</h2>
-          <p>Alongside the design work, 
-            I studied flood recovery patterns using GIS and deep learning models (Siamese U-Net), 
-            contributing to a peer-reviewed publication in Environment and Planning B: Urban Analytics and City Science (2026).</p>
-            <p>
-            <p>The research informed:</p>
-              <ul>
-                
-                <li>
-                  How recovery trajectories differ across communities
-                </li>
-                <li>Which spatial indicators most strongly predicted long-term displacement
-                </li>
-                <li>How to visually represent recovery patterns without oversimplifying risk</li>
-
-                <li>Rather than treating the interface as a static map, I approached it as a narrative translation layer between machine learning outputs and human decision-making.
-                </li>
-              </ul>
-            </p>
-          </section>
-
-        <section class="case-section">
-
-
-  <h2>Strategy & Execution</h2>
-
-  <ul>
-    <li>
-      <strong>Print-First Accessibility</strong>
-      Recognizing limited broadband access in rural regions, I designed postcard-style 
-      outreach materials that mirrored the web interface — 
-      ensuring consistency across print and digital.
-    </li>
-
-    <li>
-      <strong>AI-Assisted Iteration</strong>
-      To accelerate time-sensitive disaster communication, I incorporated AI tools (GPT-4, DALL·E) into early design drafts while maintaining human oversight for compliance and clarity. 
-      This reduced iteration time by approximately 30%.
-    </li>
-  </ul>
-
-  <figure class="case-image">
-    <div class="social-grid">
-    <img src="../assets/NE flood page/landing page - updated.png" alt="3 days left post">
-    <img src="../assets/NE flood page/flood postcard.png" alt="2 days left post">
-    <img src="../assets/NE flood page/Nebraskan Flood.jpg" alt="1 day left post">
-  </div>
-         <p></p>
-    <figcaption><small>Early postcard designs</small></figcaption>
-  </figure>
-</section>
-
-<!--IMPACT-->
-<section class="case-section">
-  <h2>The Impact</h2>
-  <ul>
-    <li>
-      <strong>8,000+ Residents Reached: </strong>
-      Distributed flood-risk outreach materials across <strong>59</strong> Nebraska Communities
-    </li>
-
-    <li>
-      <strong>Adopted by HUD-Related Stakeholders: </strong>
-      The communication framework informed disaster recovery support initiatives. 
-    </li>
-
-    <li>
-      <strong>Peer-Reviewed Research Contribution: </strong>
-      <a href="https://journals.sagepub.com/doi/10.1177/23998083251414554" class="project-link">Check it out here</a>
-    </li>
-
-    <li>
-      <strong>30% Faster Iteration: </strong>
-      AI-assisted drafting accelerated disaster-response design cycles. 
-    </li>
-  </ul>
-    </section>
-
-      </div>
+      <a class="btn" href="https://elaineyu.design">Go to elaineyu.design →</a>
     </div>
-
-    <footer class="project-page-footer">
-      <a href="../index.html#work" class="project-back">← Back to Selected Work</a>
-    </footer>
-  </article>
-</main>
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Elaine Yu</p>
-    </footer>
   </div>
-
+  <footer>
+    <p>&copy;<span id="year"></span> Elaine Yu</p>
+  </footer>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
